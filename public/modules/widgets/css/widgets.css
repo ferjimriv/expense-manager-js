@@ -1,0 +1,33 @@
+.panel-body .page-header{
+    margin-top: 10px;
+    font-variant: small-caps;
+}
+
+.list-group-item div{
+    display: inline-block;
+}
+
+.rate-header{
+    border-right: 1px solid rgba(151,187,205,1);
+}
+
+.rate-value{
+    padding: 10px 0px 10px 30px;
+}
+
+.well{
+    border-color: rgba(151,187,205,1);
+    background-color: rgba(151,187,205,0.5);
+}
+/*
+.entry-category, .entry-quantity{
+    width: 24%;
+}
+.entry-quantity{
+    text-align: right;
+}
+.entry-date{
+    width: 50%;
+    font-family: monospace;
+}
+*/

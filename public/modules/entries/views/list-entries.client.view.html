@@ -1,0 +1,24 @@
+<section data-ng-controller="EntriesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Entries</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="entry in entries | orderBy:'-date'" data-ng-href="#!/entries/{{entry._id}}/edit" class="list-group-item" item-color="entry-category.color">
+            <div class="list-group-item-text pull-right">
+                <div class="">
+                    <h4 ng-class="entry.entry_type == 'expense'? 'text-danger' : 'text-success'" data-ng-bind="entry.quantity | currency"></h4>
+                </div>
+            </div>
+            <div class="">
+                <h4 class="list-group-item-heading" data-ng-bind="entry.category"></h4>
+                <div class="">
+                    <span data-ng-bind="entry.date | date:'EEE' | uppercase"></span>
+                    <span data-ng-bind="entry.date | date:'dd MMM yyyy'"></span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!entries.$resolved || entries.length">
+    	No Entries yet, why don't you <a href="/#!/entries/create">create one</a>?
+    </div>
+</section>

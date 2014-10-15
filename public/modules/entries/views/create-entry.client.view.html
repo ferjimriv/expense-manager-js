@@ -1,0 +1,56 @@
+<div class="" data-ng-controller="EntriesController">
+    <div class="">
+        <div class="page-header">
+            <h1>New {{entry_type}}</h1>
+        </div>
+        <form class="" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div data-ng-show="error" class="alert alert-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+                <div class="form-group col-md-10 col-md-offset-1 col-sm-12 col-xs-12 btn-group">
+                    <label class="btn btn-primary col-md-6 col-xs-6 col-sm-6" ng-model="entry_type" btn-radio="'expense'" uncheckable>Expense</label>
+                    <label class="btn btn-primary col-md-6 col-xs-6 col-sm-6" ng-model="entry_type" btn-radio="'income'" uncheckable>Income</label>
+                </div>
+                <div class="form-group col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                    <label class="control-label" for="cateogry">Type</label>
+                    <div class="controls">
+                        <div class="list-group">
+                            <a class="list-group-item" ng-click="$parent.category=cat;" ng-class="$parent.category == cat? 'active': ''" ng-repeat="cat in categories" item-color>
+                                <input class="pull-right hidden" ng-model="$parent.category" ng-value="cat" type="radio" name="category"/>
+                                <h4>{{ cat }}</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-5 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label" for="date">Date</label>
+                        <div class="controls input-group">
+                            <input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="date" is-open="opened" placeholder="Date"/>
+                            <span class="input-group-btn">
+                                <a class="btn btn-primary" ng-click="open($event)"><i class="fa fa-calendar"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="quantity">Quantity</label>
+                        <div class="controls input-group">
+                            <input type="number" min="0" data-ng-model="quantity" id="quantity" class="form-control" placeholder="Quantity" required>
+                            <span class="input-group-addon"><i class="fa fa-euro"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="description">Description</label>
+                        <div class="controls">
+                            <textarea data-ng-model="description" id="description" class="form-control" placeholder="Description" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
+                    <input type="submit" value="Save" class="btn btn-primary col-md-12 col-sm-12 col-xs-12">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

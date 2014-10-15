@@ -1,0 +1,9 @@
+<section data-ng-controller="HomeController">
+    <div
+        ng-repeat="widget in area.widgets"
+        ng-controller="widget.controller"
+        ng-if="widget.shouldRender(authentication.user);"
+        class="{{widget.class}}" >
+	   <div ui-view="{{widget.view}}">
+	</div>
+</section>

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h3 class="page-header">History</h3>
+        <div class="list-group">
+            <a data-ng-repeat="entry in entries | limitTo:5 | orderBy:'-date'" data-ng-href="#!/entries/{{entry._id}}/edit" class="list-group-item" item-color="entry.category.color">
+                <div class="list-group-item-text pull-right">
+                    <div class="">
+                        <h4 ng-class="entry.entry_type == 'expense'? 'text-danger' : 'text-success'" data-ng-bind="entry.quantity | currency"></h4>
+                    </div>
+                </div>
+                <div class="">
+                    <h4 class="list-group-item-heading" data-ng-bind="entry.category"></h4>
+                    <div class="">
+                        <span data-ng-bind="entry.date | date:'EEE' | uppercase"></span>
+                        <span data-ng-bind="entry.date | date:'dd MMM yyyy'"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="text-center" ng-if="entries.length > 5">
+             <a ng-href="#!/entries" class="btn btn-md btn-primary col-md-12 col-sm-12 col-xs-12">
+                <i class="fa fa-2x fa-angle-right fa-w pull-right"></i>
+                <span ng-if="entries.length - 5 == 1">1 entry more</span>
+                <span ng-if="entries.length - 5 > 1"> {{entries.length - 5}} entries more</span>
+            </a>
+        </div>
+    </div>
+</div>
