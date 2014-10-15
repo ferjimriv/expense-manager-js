@@ -1,3 +1,20 @@
+Expense Manager JS
+==================
+
+#### Signin page
+![Singin page](https://dl.dropboxusercontent.com/u/15542982/expense-manager-js/expense_signin.png "Signin page")
+
+#### History widget
+![History widget](https://dl.dropboxusercontent.com/u/15542982/expense-manager-js/expense_history.png "History widget")
+
+#### Distribution widget
+![Distribution widget](https://dl.dropboxusercontent.com/u/15542982/expense-manager-js/expense_distribution.png "Distribution widget")
+
+#### Timeline widget
+![Timeline widget](https://dl.dropboxusercontent.com/u/15542982/expense-manager-js/expense_timeline.png "Timeline widget")
+
+
+
 ## Prerequisites
 Make sure you have installed all these prerequisites on your development machine.
 * Node.js - [Download & Install Node.js](http://www.nodejs.org/download/) and the npm package manager, if you encounter any problems, you can also use this [Github Gist](https://gist.github.com/isaacs/579814) to install Node.js.
